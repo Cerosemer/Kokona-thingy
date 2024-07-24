@@ -5,8 +5,6 @@ import yt_dlp as youtube_dl
 import asyncio
 from datetime import datetime, timedelta
 
-hard967 = 671273562518192128
-
 # Initialize the bot with the command prefix '!'
 intents = discord.Intents.default()
 intents.message_content = True  # Ensure the bot can read message content
@@ -81,11 +79,11 @@ async def shut(ctx):
 async def on_message(message):
     if message.author == bot.user: #To make sure that it is not schizophrenic
         return
-    if message.mention_everyone:
+    if message.mention_everyone: #removes annoyances
         return
     if bot.user.mentioned_in(message):
         await message.channel.send('Skibidi bop bop skibidi skibidi')
-    if 'cum' in message.content.lower() == 'cum': #specific message detection, add more if you want.
+    if 'cum' in message.content.lower() == 'cum':
         responses = [
             'Please do not.',
             'What?',
